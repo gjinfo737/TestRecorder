@@ -25,6 +25,7 @@
                 <action android:name="northwoods.testrecorder.TestRecorderBroadCastReceiver" />
             </intent-filter>
         </receiver>
+        <activity android:name="HTMLView" android:screenOrientation="landscape"></activity>
     </application>
 
 </manifest>

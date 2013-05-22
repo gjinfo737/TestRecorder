@@ -3,7 +3,7 @@ package northwoods.testrecorder;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.content.Context;
+import android.app.Activity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -11,10 +11,10 @@ import android.widget.BaseAdapter;
 public class LogListAdapter extends BaseAdapter {
 
 	List<LogSet> logSets = new ArrayList<LogSet>();
-	private Context context;
+	private Activity activity;
 
-	public LogListAdapter(Context context) {
-		this.context = context;
+	public LogListAdapter(Activity activity) {
+		this.activity = activity;
 	}
 
 	@Override
@@ -34,7 +34,7 @@ public class LogListAdapter extends BaseAdapter {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		return ((LogSet) getItem(position)).getView(context);
+		return ((LogSet) getItem(position)).getView(activity);
 	}
 
 	public void setItems(List<LogSet> logSets) {

@@ -1,6 +1,7 @@
 package northwoods.testrecorder;
 
 import northwoods.testrecorder.TestRecorderHelper.LogLevel;
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -35,4 +36,6 @@ public interface ITestRecorderView {
 	public void setEnteredSnapshotLength(int n);
 
 	public void setEnteredLevel(LogLevel level);
+
+	public Activity getActivity();
 }

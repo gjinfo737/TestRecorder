@@ -21,7 +21,7 @@ public class TestRecorderActivity extends Activity implements ITestRecorderView 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(layout.main);
-		mPresenter = new TestRecorderActivityPresenter(this, getApplicationContext(), (ListView) findViewById(id.listView));
+		mPresenter = new TestRecorderActivityPresenter(this, (ListView) findViewById(id.listView));
 
 	}
 
@@ -121,5 +121,10 @@ public class TestRecorderActivity extends Activity implements ITestRecorderView 
 
 	public static void takeSnapShot(Context context) {
 		mPresenter.takeSnapShot(context);
+	}
+
+	@Override
+	public Activity getActivity() {
+		return this;
 	}
 }

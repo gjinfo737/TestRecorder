@@ -49,11 +49,10 @@ public class TestRecorderHelper {
 				//
 
 				Date date = new Date();
-				String fileName = FILENAME + DELIM + LOG_SimpleDateFormat.format(date) + DELIM;
-				String relativePath = RELATIVEPATH + File.separator + folderName + File.separator;
-				String htmlpath = relativePath + fileName + ".html";
-				String jsonpath = relativePath + fileName + ".json";
-
+				LogSet logSet = new LogSet(date);
+				String relativePath = logSet.getRelativePath();
+				String htmlpath = logSet.getHTMLPath();
+				String jsonpath = logSet.getJSONPath();
 				File dir = new File(relativePath);
 				File json_file = new File(jsonpath);
 				File html_file = new File(htmlpath);
@@ -359,8 +358,7 @@ public class TestRecorderHelper {
 									try {
 										JSONObject allJO = new JSONObject(contents);
 										JSONArray ja = allJO.getJSONArray(JO_NAME_LINES);
-										LogSet logSet = new LogSet();
-										logSet.date = d;
+										LogSet logSet = new LogSet(d);
 										for (int j = 0; j < ja.length(); j++) {
 											LogLine logLine = new LogLine();
 											JSONObject jo = ja.getJSONObject(j);

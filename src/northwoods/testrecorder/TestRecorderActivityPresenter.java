@@ -41,10 +41,10 @@ public class TestRecorderActivityPresenter {
 	public ITestRecorderView mView;
 	private final ListView listView;
 
-	public TestRecorderActivityPresenter(ITestRecorderView c, Context context, ListView listView) {
+	public TestRecorderActivityPresenter(ITestRecorderView c, ListView listView) {
 		this.mView = c;
 		this.listView = listView;
-		this.adapter = new LogListAdapter(context);
+		this.adapter = new LogListAdapter(c.getActivity());
 		listView.setAdapter(adapter);
 	}
 
