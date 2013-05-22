@@ -64,7 +64,8 @@
                 android:inputType="number" />
 
         </LinearLayout>
-
+
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -128,7 +129,8 @@
                     android:layout_margin="10dp"
                     android:text="E" />
             </RadioGroup>
-
+
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -166,20 +168,11 @@
         </LinearLayout>
 
     </LinearLayout>
-
-    <ScrollView
-        android:id="@+id/scrollView1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-
-        <LinearLayout
-            android:id="@+id/logs_linear_layout"
-            android:background="#001133"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical" >
 
-        </LinearLayout>
-    </ScrollView>
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
 
 </LinearLayout>

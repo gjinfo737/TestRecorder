@@ -5,38 +5,34 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.view.View.OnClickListener;
-import android.widget.LinearLayout;
 
 public interface ITestRecorderView {
 
-    public Context getApplicationContext();
+	public Context getApplicationContext();
 
-    public PackageManager getPackageManager();
+	public PackageManager getPackageManager();
 
-    public SharedPreferences getSharedPreferences(String name, int mode);
+	public SharedPreferences getSharedPreferences(String name, int mode);
 
-    //
-    public LinearLayout getLogsLinearLayout();
+	public void setClickListenerOnView(int id, OnClickListener listener);
 
-    public void setClickListenerOnView(int id, OnClickListener listener);
+	public void setTextViewText(int id, String text);
 
-    public void setTextViewText(int id, String text);
+	public void setViewEnabled(int id, boolean enabled);
 
-    public void setViewEnabled(int id, boolean enabled);
+	public String getEnteredContextName();
 
-    public String getEnteredContextName();
+	public String getEnteredFolderName();
 
-    public String getEnteredFolderName();
+	public int getEnteredSnapshotLength();
 
-    public int getEnteredSnapshotLength();
+	public LogLevel getEnteredLevel();
 
-    public LogLevel getEnteredLevel();
+	public void setEnteredContextName(String contextName);
 
-    public void setEnteredContextName(String contextName);
+	public void setEnteredFolderName(String folderName);
 
-    public void setEnteredFolderName(String folderName);
+	public void setEnteredSnapshotLength(int n);
 
-    public void setEnteredSnapshotLength(int n);
-
-    public void setEnteredLevel(LogLevel level);
+	public void setEnteredLevel(LogLevel level);
 }
